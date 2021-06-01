@@ -9,11 +9,11 @@ module Google::Analytics
     def initialize(@auth : Google::Auth | String)
     end
 
-    # API details: https://developers.google.com/gmail/api/reference/rest/v1/users.messages/send
-    # sending a RAW RFC 2822 email: https://developers.google.com/gmail/api/reference/rest/v1/users.messages#Message
-    # requires scope: https://www.googleapis.com/auth/gmail.send
+    # API details: https://developers.google.com/analytics/devguides/reporting/core/v4
+    # example: https://developers.google.com/analytics/devguides/reporting/core/v4/quickstart/service-py
+    # requires scope: https://www.googleapis.com/auth/analytics.readonly
     def send_request(user_id)
-      email = Base64.strict_encode(email)
+      view_id =
 
       HTTP::Request.new(
         "POST",
